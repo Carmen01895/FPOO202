@@ -3,7 +3,7 @@ public class Main {
 
         //crear el primer objeto
         Spartan masterChief = new Spartan("John",80,100,"Rifle de Salto");
-        
+
 
         //invocamos metodos
         masterChief.mostrarInfo();
@@ -13,12 +13,7 @@ public class Main {
 
         //Segundo Objeto
 
-        Spartan TheBest = new Spartan();
-
-        TheBest.setNombre("Car");
-        TheBest.setSalud(100);
-        TheBest.setEscudo(100);
-        TheBest.setArmaPrincipal("M99 Stanchion");
+        Spartan TheBest = new Spartan("Car", 100, 100,"M99 Stanchion");
 
         TheBest.mostrarInfo();
         TheBest.atacar("Rom");
