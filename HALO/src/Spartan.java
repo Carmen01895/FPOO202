@@ -1,8 +1,40 @@
 public class Spartan {
 
-    public String nombre;
-    public int escudo, salud;
-    String armaPrincipal;
+    private String nombre;
+    private int escudo, salud;
+    private String armaPrincipal;
+    
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEscudo() {
+        return escudo;
+    }
+
+    public void setEscudo(int escudo) {
+        this.escudo = escudo;
+    }
+
+    public int getSalud() {
+        return salud;
+    }
+
+    public void setSalud(int salud) {
+        this.salud = salud;
+    }
+
+    public String getArmaPrincipal() {
+        return armaPrincipal;
+    }
+
+    public void setArmaPrincipal(String armaPrincipal) {
+        this.armaPrincipal = armaPrincipal;
+    }
 
     public void mostrarInfo() {
         System.out.println("---------- Informacion del Spartan ---------");
@@ -25,9 +57,9 @@ public class Spartan {
     }
 
     public void correr(boolean status) {
-        if (status) {
+        if (status){
             System.out.println(nombre + " esta corriendo");
-        } else {
+        }else{
             System.out.println(nombre + " se detuvo");
 
         }
