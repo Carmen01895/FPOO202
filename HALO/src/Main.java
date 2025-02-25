@@ -2,13 +2,8 @@ public class Main {
     public static void main(String[] args) {
 
         //crear el primer objeto
-        Spartan masterChief = new Spartan();
-
-        //Usar atributos
-        masterChief.setNombre("John");
-        masterChief.setSalud(100);
-        masterChief.setEscudo(80);
-        masterChief.setArmaPrincipal("Rifle de Salto");
+        Spartan masterChief = new Spartan("John",80,100,"Rifle de Salto");
+        
 
         //invocamos metodos
         masterChief.mostrarInfo();
