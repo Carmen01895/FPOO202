@@ -4,6 +4,13 @@ public class Spartan {
     private int escudo, salud;
     private String armaPrincipal;
 
+    public Spartan(String nombre, int escudo, int salud, String armaPrincipal) {
+        this.nombre = nombre;
+        this.escudo = escudo;
+        this.salud = salud;
+        this.armaPrincipal = armaPrincipal;
+    }
+
     public String getNombre() {
         return nombre;
     }
