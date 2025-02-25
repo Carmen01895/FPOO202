@@ -5,10 +5,10 @@ public class Main {
         Spartan masterChief = new Spartan();
 
         //Usar atributos
-        masterChief.nombre = "John";
-        masterChief.salud = 100;
-        masterChief.escudo = 80;
-        masterChief.armaPrincipal = "Rifle de Salto";
+        masterChief.setNombre("John");
+        masterChief.setSalud(100);
+        masterChief.setEscudo(80);
+        masterChief.setArmaPrincipal("Rifle de Salto");
 
         //invocamos metodos
         masterChief.mostrarInfo();
@@ -20,10 +20,10 @@ public class Main {
 
         Spartan TheBest = new Spartan();
 
-        TheBest.nombre = "Car";
-        TheBest.salud = 100;
-        TheBest.escudo = 100;
-        TheBest.armaPrincipal = "M99 Stanchion";
+        TheBest.setNombre("Car");
+        TheBest.setSalud(100);
+        TheBest.setEscudo(100);
+        TheBest.setArmaPrincipal("M99 Stanchion");
 
         TheBest.mostrarInfo();
         TheBest.atacar("Rom");

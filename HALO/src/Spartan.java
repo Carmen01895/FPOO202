@@ -3,7 +3,7 @@ public class Spartan {
     private String nombre;
     private int escudo, salud;
     private String armaPrincipal;
-    
+
     public String getNombre() {
         return nombre;
     }
