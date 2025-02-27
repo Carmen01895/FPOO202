@@ -1,25 +1,34 @@
 import javax.swing.JOptionPane;
 public class Main {
+    public Main() {
+    }
+
     public static void main(String[] args) {
 
         Administracion admin = new Administracion();
 
         JOptionPane.showMessageDialog(null, "Bienvenido a tu Cuenta");
 
-        admin.titular = JOptionPane.showInputDialog(null,
+        admin.setTitular(JOptionPane.showInputDialog(null,
                 "Ingrese su nombre", "Datos de la persona",
-                JOptionPane.QUESTION_MESSAGE);
+                JOptionPane.QUESTION_MESSAGE));
+
+        admin.setCuenta(Integer.parseInt(JOptionPane.showInputDialog(null,
+                "Ingrese su numero de cuenta", "Numero de cuenta",
+                JOptionPane.QUESTION_MESSAGE)));
+
+        admin.setEdad(Integer.parseInt(JOptionPane.showInputDialog(null,
+                "Ingrese su Edad", "Edad del Titular",
+                JOptionPane.QUESTION_MESSAGE)));
 
 
-        if (admin.titular != null) {
-            admin.cuenta = 534520283;
-            admin.edad = 21;
+        if (admin.getTitular()!= null) {
 
-            admin.saldo = JOptionPane.showInputDialog(null,
+            admin.setSaldo(JOptionPane.showInputDialog(null,
                     "Ingrese la cantidad con la que desea Iniciar ", "Saldo",
-                    JOptionPane.QUESTION_MESSAGE);
+                    JOptionPane.QUESTION_MESSAGE));
 
-            JOptionPane.showMessageDialog(null, "Bienvenid@ a tu cuenta \n" + admin.titular);
+            JOptionPane.showMessageDialog(null, "Bienvenid@ a tu cuenta \n" + admin.getTitular());
 
 
             while (true) {
