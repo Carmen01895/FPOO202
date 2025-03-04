@@ -5,8 +5,9 @@ public class Spartan extends Soldado {
         super(nombre, salud, arma);
         this.escudo = escudo;
     }
+
     @Override
-    public void recibDano(int dano) {
+    public void recibirDano(int dano) {
         if (escudo > 0) {
             escudo -= dano;
             if (escudo < 0) {
@@ -18,4 +19,15 @@ public class Spartan extends Soldado {
             super.recibirDano(dano);
         }
     }
+    public void recargarEscudo (){
+        escudo = 100;
+    System.out.println(nombre + " ha recargado el escudo al Máximo");
+     }
+
+     @Override
+    public void mostrarInfo (){
+        super.mostrarInfo();
+    System.out.println("Escudo: " + this.escudo);
+     }
 }
+

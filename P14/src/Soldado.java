@@ -29,5 +29,4 @@ public abstract class Soldado {
             System.out.println("Arma: " + arma);
         }
 
-    public abstract void recibDano(int dano);
 }
