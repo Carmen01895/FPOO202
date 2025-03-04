@@ -1,4 +1,4 @@
-public class Soldado {
+public abstract class Soldado {
         protected String nombre;
         protected int salud;
         protected String arma;
@@ -28,4 +28,6 @@ public class Soldado {
             System.out.println("Salud: " + salud);
             System.out.println("Arma: " + arma);
         }
+
+    public abstract void recibDano(int dano);
 }
