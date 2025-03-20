@@ -70,6 +70,11 @@ public class FormRegistro extends javax.swing.JFrame {
 
         btnLimpiar.setForeground(new java.awt.Color(0, 0, 255));
         btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         btnGuardar.setForeground(new java.awt.Color(0, 102, 51));
         btnGuardar.setText("Guardar");
@@ -139,13 +144,44 @@ public class FormRegistro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtnombreActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
+        // 1. Obtener los valores de los txt
+        String nombre = txtnombre.getText();
+        String correo = txtcorreo.getText();
+        String contrasena = txtcontrasena.getText();
+        
+        // 2. Validar que no envie vacios a BD
+        if(nombre.isEmpty() || correo.isEmpty() || contrasena.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // 3. Ejecutamos el Insert
+        UserCRUD crud = new UserCRUD();
+        boolean status = crud.crearUsuario(nombre, correo, contrasena);
+        
+        //4. Notificamos 
+        if(status){
+            JOptionPane.showMessageDialog(this,"Usuario Guardado", "Exito", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(this, "No se guardo", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        limpiarCampos();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        limpiarCampos();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+    
+    private void limpiarCampos(){
+        txtnombre.setText("");
+        txtcorreo.setText("");
+        txtcontrasena.setText("");
+    }
     /**
      * @param args the command line arguments
      */
