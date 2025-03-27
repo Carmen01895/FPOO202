@@ -11,6 +11,7 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.ResultSet;
 
 public class UserCRUD {
    
@@ -18,7 +19,7 @@ public class UserCRUD {
     
     public UserCRUD (){
         conexion = ConexionMySQL.conectar();
-    }
+    } //Constructor
     
     public boolean crearUsuario (String nombre, String correo, String contrasena){
         
@@ -34,6 +35,32 @@ public class UserCRUD {
             System.out.println("Error al intentar Insertar: " + e.getMessage());
             return false;
         }  
+    }//Metodo
+    
+    public ResultSet obtenerUsuarioPorID(int id){
+        
+        String selectSQL = "SELECT * FROM Usuarios WHERE id = ?";
+        
+        try{
+            PreparedStatement ps = conexion.prepareStatement(selectSQL);
+                    ps.setInt(1, id);
+                    return ps.executeQuery();
+        } catch(SQLException e){
+            System.out.println("Error al intentar Consultar: " + e.getMessage());
+            return null;
+        }  //Metodo
+        
     }
     
+    public ResultSet obtenerTodos(){
+        String sqlTodos = "SELECT * FROM Usuarios";
+        
+        try{
+            PreparedStatement ps = conexion.prepareStatement(sqlTodos);
+                    return ps.executeQuery();
+        }catch(SQLException w){
+            System.out.println("Error al consultar" + w.getMessage());
+            return null;
+        }
+    }
 }
