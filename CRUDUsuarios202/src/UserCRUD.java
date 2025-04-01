@@ -62,5 +62,48 @@ public class UserCRUD {
             System.out.println("Error al consultar" + w.getMessage());
             return null;
         }
+    }//Obtener Todos
+    
+    public boolean ActualizarNombre(String id, String nombre){
+        String sqlActualizarN = "UPDATE Usuarios SET nombre = ? WHERE id = ?";
+        try{
+            PreparedStatement ps = conexion.prepareStatement(sqlActualizarN);
+            ps.setString(1, nombre);
+            ps.setString (2,id);
+            return ps.executeUpdate()>0;
+        }
+        catch(SQLException e){
+            System.out.println("Error al intentar Actualizar: " + e.getMessage());
+            return false;
+        }
     }
+    
+    public boolean ActualizarCorreo (String id, String correo){
+        String sqlActualizarE = "UPDATE Usuarios SET correo = ? WHERE id = ?";
+        try{
+            PreparedStatement ps = conexion.prepareStatement(sqlActualizarE);
+            ps.setString(1, correo); 
+            ps.setString(2, id);
+            return ps.executeUpdate()>0;
+        }
+        catch(SQLException e){
+            System.out.println("Error al intentar Actualizar: " + e.getMessage());
+            return false;
+        }
+    }
+    
+    public boolean ActualizarContrasena (String id, String contrasena){
+        String sqlActualizarE = "UPDATE Usuarios SET contrasena = ? WHERE id = ?";
+        try{
+            PreparedStatement ps = conexion.prepareStatement(sqlActualizarE);
+            ps.setString(1, contrasena); 
+             ps.setString(2, id);
+            return ps.executeUpdate()>0;
+        }
+        catch(SQLException e){
+            System.out.println("Error al intentar Actualizar: " + e.getMessage());
+            return false;
+        }
+    }
+    
 }

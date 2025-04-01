@@ -102,7 +102,7 @@ public class FormConsulta extends javax.swing.JFrame {
                         .addGap(92, 92, 92)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(297, 297, 297)
+                        .addGap(306, 306, 306)
                         .addComponent(btnTodos)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
