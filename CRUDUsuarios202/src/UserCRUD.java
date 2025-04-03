@@ -106,4 +106,17 @@ public class UserCRUD {
         }
     }
     
+    public boolean EliminarUsuario (String id){
+        String sqlEliminarU = "DELETE FROM Usuarios WHERE id = ?";
+        try{
+            PreparedStatement ps = conexion.prepareStatement(sqlEliminarU);
+             ps.setString(1, id);
+            return ps.executeUpdate()>0;
+        }
+        catch(SQLException e){
+            System.out.println("Error al intentar Eliminar: " + e.getMessage());
+            return false;
+        }
+    }
+    
 }
